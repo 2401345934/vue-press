@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.56">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>协调与调度 | Alan</title><meta name="description" content="这是我的第一个 VuePress 站点">
+    <link rel="preload" href="/vue-press/assets/style.72544fc1.css" as="style" /><link rel="stylesheet" href="/vue-press/assets/style.72544fc1.css" />
+    <link rel="modulepreload" href="/vue-press/assets/app.7f0f8002.js"><link rel="modulepreload" href="/vue-press/assets/framework.fef63301.js"><link rel="modulepreload" href="/vue-press/assets/index.html.8d5fcb9e.js"><link rel="modulepreload" href="/vue-press/assets/index.html.bba0a2c1.js"><link rel="prefetch" href="/vue-press/assets/index.html.a38ef595.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.04029c7d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/template.html.842fdff5.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1e169b49.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bddabaca.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0cb2ec03.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.08a76830.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.212f9c20.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a04f8b40.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.61a9d99f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bac96ceb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a951e51d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.20b50678.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0384067e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5206a3ca.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a2d582d7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b440e6e7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3d7ab9a0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.78717a08.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bdb6bd91.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.342966eb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4f9ed65e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8fe64ac2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.34500607.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a6290b7e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ffe2b699.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.936025cd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.be232207.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c36cb923.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.04c4a8eb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9e90fb59.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4a194b1a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.107de5c9.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bf28c81c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5be720df.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d305a1e8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1510f903.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0b69024f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7b2b29ce.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1755dd90.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.228214ad.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5ce364d8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.90e4c09e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.59cc872e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e1af3dad.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bccb392e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c7dadec2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.84583dae.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7399ac4b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e12657ef.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2f0e5045.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.23e840b7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c181693e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.648f486c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.dc221dc0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b31d7496.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e2ac692e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9eaaf4c6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.62c4ec12.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9b9cf5bc.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bcf6b01a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.59e8b145.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6e9bb255.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.daaa8bab.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4eda3a3a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8d78b45a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1379efe8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.58049bde.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.cd98fabf.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2498ea06.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5d74e3b8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d6fdd8d1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4737624b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.41261e5a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.74c11995.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1277f305.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5422c71c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c2ee54e2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4108bd75.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.abcee0f1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.80bc8ab2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.48e819b4.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7d2dfb56.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.28eb6faf.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.529113e2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.23d92b24.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a5d40903.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c752ebfb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c657be8f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c688d88a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d2390ebb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.96b801fb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.fa60b780.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4eb18425.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.730657ba.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.09bcce44.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.33f14fd6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.31ca49b7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4e325696.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.58c53ae4.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.12d76eb9.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.946c8a03.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5469dd8b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.cf50624d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.65b48f63.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.132d4e8e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c2e8f1f7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9b7590aa.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e4abcd52.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8fe57660.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.860c372f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d3af543a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.fa45a52c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8d433565.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.aaa87919.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6ad16644.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.299af82a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.31571fb7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.25ccfc6f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3d7a400d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.76cfcf34.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.451397e7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6a177da7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.65efc1c4.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b6168bd0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.230b29b1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e648fee1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b8ff93eb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b7946295.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6ea50a88.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.eb0120c3.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2883312c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.daa43fea.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.cbf19b50.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6345cb45.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3b87e0b1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ca655243.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.28d114a8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7bf47cc8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b2795d0e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0c92e63d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e7762623.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.57068b32.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.88056345.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b7ff061a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3b69ce43.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c5d32a16.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4beea750.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5d1b8f9d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e49017bc.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9fa925a4.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d8a69231.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0bd15046.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.978d2681.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3405968f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.eb4b8622.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b8372f38.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.dcfef6c6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.04b172d7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.cda0097a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8230c7bc.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.81061d6f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bded0151.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6d8fd7c4.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c9731c31.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.308b5af0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.cb7e2f1b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0592d309.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bfa8ad1e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.32081adf.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.38fb9cc4.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.aa14c73f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.253892bb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.296b4915.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0416f302.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.52ffa9a7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.39710cac.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d603e8fd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f9d2bfc0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8f8ae245.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.73f80d61.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8572d307.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.94442220.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7c3a512d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2232481c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3d18e441.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f935c709.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bf1e7dcd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7037b5ca.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b9dc2af6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3fd1fdf2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c979e270.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2c7f3277.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.68dff44a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ffe53eb1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f5694d6c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5b378c32.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f6035d7e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.82a08fcc.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.fe66daa6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.491685d8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.90ee9b8f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c7b372c4.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.77c84966.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.92ec0341.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1945f0a6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.fa14e805.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1d7d4b98.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2cc782fd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ae1d415f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6b82b862.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9cee7e7e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f2a1f50a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0174b50d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.edc469b8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f51c4cd1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4bbcb858.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3bedcf23.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2d806d69.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.01291559.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6f074bb7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8010eeed.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.35ac4ef1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7f4c7047.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f5783e98.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ccf5de3b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.55cba05b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2ae71aeb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2a5cb7cd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.547b7d56.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c26870f7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1ec0c7f0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.da5f4322.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8725d898.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f490b4ed.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d2b8ac7b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1e25ff5b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/404.html.c3e557d0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b1530f40.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ddc02845.js" as="script" /><link rel="prefetch" href="/vue-press/assets/template.html.f93a66cf.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.cbf63d78.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9da25eb7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7607e9e8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7f5d8a32.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f10bc5eb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.167f255e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b34aaf21.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.02666ddb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.cc7ec5ba.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e11679e7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bc3f43ab.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.16227427.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b43a17ff.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ff0e9634.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f71274e3.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.dec1f1ce.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.77fc02ee.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ab3fe641.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.24ea4f29.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5c2b9a68.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e77e8539.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.be7c80b3.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.23bdd8cc.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.27da1b33.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.445e5411.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8034e800.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7e02fe59.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.20812baf.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f2c6bfeb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0e01746a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.019c01e5.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.82b0a06e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.074d081b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e3f42a11.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.23b0e000.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f9f96e16.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0a0b407b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.53d76266.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8ccf9114.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.28c443b6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.34fe657c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.556bef62.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4a691ed5.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.93e77cf6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.dc416ae1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7fb18127.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8b2fd453.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.42f6ed25.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0521ecf8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.06606ed8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.332c6e76.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9d859342.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.39198706.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.811f0215.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8cb3cc6f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d77a95ef.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ae8be969.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.25e18ecd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d3424b16.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f36325fd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.aad8dec7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.caf7ea15.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.202281a6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0e165915.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.39afcfc5.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.00dd8f39.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4c068eca.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ef4c1af1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.13ab275a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.168511a3.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a6e39ee3.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.77e1a0ce.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9181be39.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5043c9f5.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.15d04cff.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a4ce510e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7eccd314.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5890cf48.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.262a4b24.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2460c3fd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c4fde36e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a1952474.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.35cd3092.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8d6a5714.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2563c7e2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d09020e4.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3d20f099.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9e6c9a3d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f9f78d47.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ba0c0a0a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8386d31d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4dc2cc97.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2ec190c7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0c19d1bf.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b8dcb175.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e904fd8a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c0b519ae.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.90ad6037.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.31bc8f7c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1d935911.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3157e0e8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9b099911.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f6265dfc.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1e388170.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.cda8e0f8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f3e305f9.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5a488ee9.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a0c91dee.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.62c1e40d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.716732ce.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b77d9f4f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0e8cfebd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.441a498f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5a0e7b6f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ab4e3b02.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e1a3d9c3.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ebff86dc.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1a65adc2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f8c253ee.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4b0b12d2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.07f4a6f4.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d52a1805.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.62aaede0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ed1eb6fb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.91407b6a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e4647ca0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2eb5b78d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b65ca84d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.331130dc.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d8acf661.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0c53fb00.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1164455b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8be0e3a8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.af20bd94.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4ed56f60.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.18120f4c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3766d214.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.010503a4.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0d82ff40.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e777522d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7715ebe7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.90da6a80.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b53753bd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7c7709a8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.249c0fde.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.4702813f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9358f6c6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5e856864.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b06e2036.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.02fd4fb3.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7ea83dec.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a0e7fb97.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.61debb80.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5ea8f5df.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.107c277b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.75d3b2a2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.69c74b0e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6fb4098f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.75f68a0d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.60cbcfe3.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.571cd596.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1ed96ed7.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0420f3fd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d8d36bf8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e5a36c31.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.513a069a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f145f288.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.89e26a63.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a7750ab1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.36e5b215.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.9bc8aee2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.80be3fc8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.69512486.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.43cc4343.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.eeea0f1f.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.96e921fb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.51075193.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2c0aed3a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1d36d3fe.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0750362b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.047ff405.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0d804610.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.617b0d32.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f88d1d0e.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3461c085.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ebe2d0ac.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f6c0f634.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.19fcbf00.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6557516c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.8872d22b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6ee623eb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.fa1787ba.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2e6c4f09.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.a3ba16e3.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.b3c4b3c5.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.91754c41.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.14b751ce.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.56ea56dd.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f0911428.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d91ff3e2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.bbe31d95.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.6c25a5d0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.553b1a15.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e998bc8d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.fddcd922.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c7f24d11.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f0feaa7d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.888c0ed8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d53bf8fb.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7f3d43d2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5ed2d778.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.1548b933.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d3eea5f5.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.238dacee.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e3c796e0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.2d2f84a8.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.00587531.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.e00ec67c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0c9223f5.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.3ab7a4e2.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.24666f76.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.5d199815.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.d9854e4c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.cb79d23a.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.fba5ecb1.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.15a5232c.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.98a7913b.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.7666901d.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.0d03e4da.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ff3cfdf5.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.f5a36317.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.ede519c0.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.c892c452.js" as="script" /><link rel="prefetch" href="/vue-press/assets/index.html.61fed002.js" as="script" /><link rel="prefetch" href="/vue-press/assets/404.html.6c86e2a6.js" as="script" /><link rel="prefetch" href="/vue-press/assets/clientConfigs.d928df69.js" as="script" />
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/vue-press/" class=""><!----><span class="site-name">Alan</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/vue-press/interview-questions/westore/principle/" class="" aria-label="面试题"><!--[--><!--]--> 面试题 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/source/react/render/" class="router-link-active" aria-label="源码"><!--[--><!--]--> 源码 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/utils/utils/business-utils/" class="" aria-label="utils"><!--[--><!--]--> utils <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/basic-quality/http/http-https/" class="" aria-label="工程师基本素养"><!--[--><!--]--> 工程师基本素养 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/data-structures-algorithms/introduction/" class="" aria-label="算法&amp;数据结构"><!--[--><!--]--> 算法&amp;数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/engineering/npm/private/" class="" aria-label="工程化"><!--[--><!--]--> 工程化 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/tool/compressed-image/" class="" aria-label="工作工具"><!--[--><!--]--> 工作工具 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/my-vite-component/introduce/" class="" aria-label="vite-component-doc"><!--[--><!--]--> vite-component-doc <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/CHANGELOG/" class="" aria-label="CHANGELOG"><!--[--><!--]--> CHANGELOG <!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/vue-press/interview-questions/westore/principle/" class="" aria-label="面试题"><!--[--><!--]--> 面试题 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/source/react/render/" class="router-link-active" aria-label="源码"><!--[--><!--]--> 源码 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/utils/utils/business-utils/" class="" aria-label="utils"><!--[--><!--]--> utils <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/basic-quality/http/http-https/" class="" aria-label="工程师基本素养"><!--[--><!--]--> 工程师基本素养 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/data-structures-algorithms/introduction/" class="" aria-label="算法&amp;数据结构"><!--[--><!--]--> 算法&amp;数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/engineering/npm/private/" class="" aria-label="工程化"><!--[--><!--]--> 工程化 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/tool/compressed-image/" class="" aria-label="工作工具"><!--[--><!--]--> 工作工具 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/my-vite-component/introduce/" class="" aria-label="vite-component-doc"><!--[--><!--]--> vite-component-doc <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue-press/CHANGELOG/" class="" aria-label="CHANGELOG"><!--[--><!--]--> CHANGELOG <!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">React <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/vue-press/source/react/render/" class="sidebar-item" aria-label="渲染控制"><!--[--><!--]--> 渲染控制 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/react/event-mechanism/" class="sidebar-item" aria-label="事件机制"><!--[--><!--]--> 事件机制 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="协调与调度 "><!--[--><!--]--> 协调与调度  <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#requestupdatelane" class="router-link-active router-link-exact-active sidebar-item" aria-label="requestUpdateLane"><!--[--><!--]--> requestUpdateLane <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#findupdatelane" class="router-link-active router-link-exact-active sidebar-item" aria-label="findUpdateLane"><!--[--><!--]--> findUpdateLane <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#lanepriority-lanepriority" class="router-link-active router-link-exact-active sidebar-item" aria-label="lanePriority: LanePriority"><!--[--><!--]--> lanePriority: LanePriority <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#createupdate" class="router-link-active router-link-exact-active sidebar-item" aria-label="createUpdate"><!--[--><!--]--> createUpdate <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#enqueueupdate" class="router-link-active router-link-exact-active sidebar-item" aria-label="enqueueUpdate"><!--[--><!--]--> enqueueUpdate <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#总结" class="router-link-active router-link-exact-active sidebar-item" aria-label="总结"><!--[--><!--]--> 总结 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#协调与调度-1" class="router-link-active router-link-exact-active sidebar-item" aria-label="协调与调度"><!--[--><!--]--> 协调与调度 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#reconciler流程" class="router-link-active router-link-exact-active sidebar-item" aria-label="reconciler流程"><!--[--><!--]--> reconciler流程 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#shouldyield" class="router-link-active router-link-exact-active sidebar-item" aria-label="shouldYield"><!--[--><!--]--> shouldYield <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#performunitofwork" class="router-link-active router-link-exact-active sidebar-item" aria-label="performUnitOfWork"><!--[--><!--]--> performUnitOfWork <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#beginwork" class="router-link-active router-link-exact-active sidebar-item" aria-label="beginWork"><!--[--><!--]--> beginWork <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#completeunitofwork" class="router-link-active router-link-exact-active sidebar-item" aria-label="completeUnitOfWork"><!--[--><!--]--> completeUnitOfWork <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#scheduler流程" class="router-link-active router-link-exact-active sidebar-item" aria-label="scheduler流程"><!--[--><!--]--> scheduler流程 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#performworkuntildeadline" class="router-link-active router-link-exact-active sidebar-item" aria-label="performWorkUntilDeadline"><!--[--><!--]--> performWorkUntilDeadline <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue-press/source/react/coordination-scheduling/#总结-1" class="router-link-active router-link-exact-active sidebar-item" aria-label="总结"><!--[--><!--]--> 总结 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/vue-press/source/react/hooks/" class="sidebar-item" aria-label="Hooks原理"><!--[--><!--]--> Hooks原理 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading">Vue <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/vue-press/source/vue/vue-design/" class="sidebar-item" aria-label="Vue/整体设计"><!--[--><!--]--> Vue/整体设计 <!--[--><!--]--></a><!----></li><li><p tabindex="0" class="sidebar-item">Vue/组件 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/vue-press/source/vue/component/vue-component-create/" class="sidebar-item" aria-label="组件的渲染流程"><!--[--><!--]--> 组件的渲染流程 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/component/vue-component-update/" class="sidebar-item" aria-label="组件的更新流程"><!--[--><!--]--> 组件的更新流程 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/component/vue-component-instance/" class="sidebar-item" aria-label="组件的实例"><!--[--><!--]--> 组件的实例 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/component/vue-component-props/" class="sidebar-item" aria-label="组件的 props"><!--[--><!--]--> 组件的 props <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/component/vue-component-life-cycle/" class="sidebar-item" aria-label="组件的生命周期"><!--[--><!--]--> 组件的生命周期 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/component/vue-component-async/" class="sidebar-item" aria-label="异步组件"><!--[--><!--]--> 异步组件 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item">Vue/响应式原理 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/vue-press/source/vue/reactive-principle/reactive/" class="sidebar-item" aria-label="reactive API"><!--[--><!--]--> reactive API <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/reactive-principle/dep-collection/" class="sidebar-item" aria-label="依赖收集"><!--[--><!--]--> 依赖收集 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/reactive-principle/notification/" class="sidebar-item" aria-label="派发通知"><!--[--><!--]--> 派发通知 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/reactive-principle/implementation-optimized/" class="sidebar-item" aria-label="响应式实现的优化 Vue3.2 版本"><!--[--><!--]--> 响应式实现的优化 Vue3.2 版本 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/reactive-principle/ref/" class="sidebar-item" aria-label="ref"><!--[--><!--]--> ref <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/reactive-principle/shallowReactive/" class="sidebar-item" aria-label="shallowReactive"><!--[--><!--]--> shallowReactive <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/reactive-principle/readonly/" class="sidebar-item" aria-label="readonly"><!--[--><!--]--> readonly <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/reactive-principle/conclusion/" class="sidebar-item" aria-label="响应式原理总结"><!--[--><!--]--> 响应式原理总结 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item">计算属性 computed <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/vue-press/source/vue/computed/computed/" class="sidebar-item" aria-label="computed API"><!--[--><!--]--> computed API <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/computed/operation-mechanism/" class="sidebar-item" aria-label="计算属性的运行机制"><!--[--><!--]--> 计算属性的运行机制 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/computed/conclusion/" class="sidebar-item" aria-label="计算属性 computed总结"><!--[--><!--]--> 计算属性 computed总结 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item">监听器 wacher <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/vue-press/source/vue/watch/realize-principle/" class="sidebar-item" aria-label="watch API 的实现原理"><!--[--><!--]--> watch API 的实现原理 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/watch/design/" class="sidebar-item" aria-label="异步队列任务的设计"><!--[--><!--]--> 异步队列任务的设计 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/watch/watchEffect/" class="sidebar-item" aria-label="watchEffect API"><!--[--><!--]--> watchEffect API <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/watch/dev-debg/" class="sidebar-item" aria-label="开发环境 侦听器调试"><!--[--><!--]--> 开发环境 侦听器调试 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/watch/conclusion/" class="sidebar-item" aria-label="监听器总结"><!--[--><!--]--> 监听器总结 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item">模版解析 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/vue-press/source/vue/parsing/create-ast/" class="sidebar-item" aria-label="生成 AST"><!--[--><!--]--> 生成 AST <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/parsing/resolving-content/" class="sidebar-item" aria-label="创建解析上下文"><!--[--><!--]--> 创建解析上下文 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/parsing/resolving-children/" class="sidebar-item" aria-label="解析子节点"><!--[--><!--]--> 解析子节点 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/parsing/create-root/" class="sidebar-item" aria-label="创建 AST 根节点"><!--[--><!--]--> 创建 AST 根节点 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/parsing/conclusion/" class="sidebar-item" aria-label="模版解析总结"><!--[--><!--]--> 模版解析总结 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item">AST 转换 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/vue-press/source/vue/ast-transform/ast-transform/" class="sidebar-item" aria-label="AST 转换"><!--[--><!--]--> AST 转换 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/ast-transform/create-transform/" class="sidebar-item" aria-label="创建 tramsform 上下文"><!--[--><!--]--> 创建 tramsform 上下文 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/ast-transform/each-transform/" class="sidebar-item" aria-label="遍历 AST 节点"><!--[--><!--]--> 遍历 AST 节点 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/ast-transform/hoist-static/" class="sidebar-item" aria-label="静态提升"><!--[--><!--]--> 静态提升 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/ast-transform/create-root/" class="sidebar-item" aria-label="创建根节点的代码生成节点"><!--[--><!--]--> 创建根节点的代码生成节点 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/ast-transform/conclusion/" class="sidebar-item" aria-label="AST 转换总结"><!--[--><!--]--> AST 转换总结 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item">生成代码 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/vue-press/source/vue/create-code/1/" class="sidebar-item" aria-label="生成代码"><!--[--><!--]--> 生成代码 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/create-code/2/" class="sidebar-item" aria-label="创建代码生成上下文"><!--[--><!--]--> 创建代码生成上下文 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/create-code/3/" class="sidebar-item" aria-label="生成预设代码"><!--[--><!--]--> 生成预设代码 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/create-code/4/" class="sidebar-item" aria-label="生成预设代码"><!--[--><!--]--> 生成预设代码 <!--[--><!--]--></a><!----></li><li><a href="/vue-press/source/vue/create-code/5/" class="sidebar-item" aria-label="生成资源声明代码"><!--[--><!--]--> 生成资源声明代码 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="协调与调度" tabindex="-1"><a class="header-anchor" href="#协调与调度" aria-hidden="true">#</a> 协调与调度</h1><p>其实在<code>React</code>执行过程中，会有数不清的任务要去执行，但是他们会有一个<code>优先级的判定</code>，假如两个事件的<code>优先级一样</code>，那么<code>React</code>是怎么去判定他们两谁先执行呢？</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token comment">// packages/react-reconciler/src/ReactFiberWorkLoop.old.js</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">requestEventTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>executionContext <span class="token operator">&amp;</span> <span class="token punctuation">(</span>RenderContext <span class="token operator">|</span> CommitContext<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!==</span> NoContext<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// We&#39;re inside React, so it&#39;s fine to read the actual time.</span>
+    <span class="token comment">// react事件正在执行</span>
+    <span class="token comment">// executionContext</span>
+    <span class="token comment">// RenderContext 正在计算</span>
+    <span class="token comment">// CommitContext 正在提交</span>
+    <span class="token comment">// export const NoContext = /*             */ 0b0000000;</span>
+    <span class="token comment">// const BatchedContext = /*               */ 0b0000001;</span>
+    <span class="token comment">// const EventContext = /*                 */ 0b0000010;</span>
+    <span class="token comment">// const DiscreteEventContext = /*         */ 0b0000100;</span>
+    <span class="token comment">// const LegacyUnbatchedContext = /*       */ 0b0001000;</span>
+    <span class="token comment">// const RenderContext = /*                */ 0b0010000;</span>
+    <span class="token comment">// const CommitContext = /*                */ 0b0100000;</span>
+    <span class="token comment">// export const RetryAfterError = /*       */ 0b1000000;</span>
+    <span class="token keyword">return</span> <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 没有在react事件执行 NoTimestamp === -1</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>currentEventTime <span class="token operator">!==</span> NoTimestamp<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment">// 浏览器事件正在执行，返回上次的 currentEventTime</span>
+    <span class="token keyword">return</span> currentEventTime<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 重新计算currentEventTime，当执行被中断后</span>
+  currentEventTime <span class="token operator">=</span> <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> currentEventTime<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li><code>RenderContext</code>与<code>CommitContext</code>表示正在计算更新和正在提交更新，返回<code>now()</code>。</li><li>如果是浏览器事件正在执行中，返回上一次的<code>currentEventTime</code>。</li><li>如果终止或者<code>中断react</code>任务执行的时候，则重新获取执行时间<code>now(</code>)。</li><li>获取的时间<code>越小</code>，则执行的优先级<code>越高</code>。</li></ul><p><code>now()</code>并不是单纯的<code>new Date()</code>，而是判定两次更新任务的时间是否<code>小于10ms</code>，来决定是否<code>复用</code>上一次的更新时间<code>Scheduler_now</code>的。</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">const</span> now <span class="token operator">=</span> initialTimeMs <span class="token operator">&lt;</span> <span class="token number">10000</span> <span class="token operator">?</span> <span class="token function-variable function">Scheduler_now</span> <span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">Scheduler_now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> initialTimeMs<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>其实各位猜想一下，对于<code>10ms</code>级别的任务间隙时间，几乎是可以忽略不计的，那么这里就可以视为同样的任务，不需要有很大的性能开销，有利于<code>批量更新</code>。</p><h3 id="requestupdatelane" tabindex="-1"><a class="header-anchor" href="#requestupdatelane" aria-hidden="true">#</a> requestUpdateLane</h3><p>requestEventTime位每一个需要执行的任务打上了触发更新时间标签，那么任务的优先级还需要进一步的确立，requestUpdateLane就是用来获取每一个任务执行的优先级的。</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token comment">// packages/react-reconciler/src/ReactFiberWorkLoop.old.js</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">requestUpdateLane</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">fiber</span><span class="token operator">:</span> Fiber</span><span class="token punctuation">)</span><span class="token operator">:</span> Lane <span class="token punctuation">{</span>
+  <span class="token comment">// Special cases</span>
+  <span class="token keyword">const</span> mode <span class="token operator">=</span> fiber<span class="token punctuation">.</span>mode<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> BlockingMode<span class="token punctuation">)</span> <span class="token operator">===</span> NoMode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>SyncLane<span class="token operator">:</span> Lane<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> ConcurrentMode<span class="token punctuation">)</span> <span class="token operator">===</span> NoMode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">getCurrentPriorityLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> ImmediateSchedulerPriority
+      <span class="token operator">?</span> <span class="token punctuation">(</span>SyncLane<span class="token operator">:</span> Lane<span class="token punctuation">)</span>
+      <span class="token operator">:</span> <span class="token punctuation">(</span>SyncBatchedLane<span class="token operator">:</span> Lane<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>
+    <span class="token operator">!</span>deferRenderPhaseUpdateToNextBatch <span class="token operator">&amp;&amp;</span>
+    <span class="token punctuation">(</span>executionContext <span class="token operator">&amp;</span> RenderContext<span class="token punctuation">)</span> <span class="token operator">!==</span> NoContext <span class="token operator">&amp;&amp;</span>
+    workInProgressRootRenderLanes <span class="token operator">!==</span> NoLanes
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// This is a render phase update. These are not officially supported. The</span>
+    <span class="token comment">// old behavior is to give this the same &quot;thread&quot; (expiration time) as</span>
+    <span class="token comment">// whatever is currently rendering. So if you call `setState` on a component</span>
+    <span class="token comment">// that happens later in the same render, it will flush. Ideally, we want to</span>
+    <span class="token comment">// remove the special case and treat them as if they came from an</span>
+    <span class="token comment">// interleaved event. Regardless, this pattern is not officially supported.</span>
+    <span class="token comment">// This behavior is only a fallback. The flag only exists until we can roll</span>
+    <span class="token comment">// out the setState warning, since existing code might accidentally rely on</span>
+    <span class="token comment">// the current behavior.</span>
+    <span class="token keyword">return</span> <span class="token function">pickArbitraryLane</span><span class="token punctuation">(</span>workInProgressRootRenderLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// The algorithm for assigning an update to a lane should be stable for all</span>
+  <span class="token comment">// updates at the same priority within the same event. To do this, the inputs</span>
+  <span class="token comment">// to the algorithm must be the same. For example, we use the `renderLanes`</span>
+  <span class="token comment">// to avoid choosing a lane that is already in the middle of rendering.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// However, the &quot;included&quot; lanes could be mutated in between updates in the</span>
+  <span class="token comment">// same event, like if you perform an update inside `flushSync`. Or any other</span>
+  <span class="token comment">// code path that might call `prepareFreshStack`.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// The trick we use is to cache the first of each of these inputs within an</span>
+  <span class="token comment">// event. Then reset the cached values once we can be sure the event is over.</span>
+  <span class="token comment">// Our heuristic for that is whenever we enter a concurrent work loop.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// We&#39;ll do the same for `currentEventPendingLanes` below.</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>currentEventWipLanes <span class="token operator">===</span> NoLanes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    currentEventWipLanes <span class="token operator">=</span> workInProgressRootIncludedLanes<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> isTransition <span class="token operator">=</span> <span class="token function">requestCurrentTransition</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!==</span> NoTransition<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isTransition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>currentEventPendingLanes <span class="token operator">!==</span> NoLanes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      currentEventPendingLanes <span class="token operator">=</span>
+        mostRecentlyUpdatedRoot <span class="token operator">!==</span> <span class="token keyword">null</span>
+          <span class="token operator">?</span> mostRecentlyUpdatedRoot<span class="token punctuation">.</span>pendingLanes
+          <span class="token operator">:</span> NoLanes<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">findTransitionLane</span><span class="token punctuation">(</span>currentEventWipLanes<span class="token punctuation">,</span> currentEventPendingLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// TODO: Remove this dependency on the Scheduler priority.</span>
+  <span class="token comment">// To do that, we&#39;re replacing it with an update lane priority.</span>
+
+  <span class="token comment">// 获取执行任务的优先级，便于调度</span>
+  <span class="token keyword">const</span> schedulerPriority <span class="token operator">=</span> <span class="token function">getCurrentPriorityLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// The old behavior was using the priority level of the Scheduler.</span>
+  <span class="token comment">// This couples React to the Scheduler internals, so we&#39;re replacing it</span>
+  <span class="token comment">// with the currentUpdateLanePriority above. As an example of how this</span>
+  <span class="token comment">// could be problematic, if we&#39;re not inside `Scheduler.runWithPriority`,</span>
+  <span class="token comment">// then we&#39;ll get the priority of the current running Scheduler task,</span>
+  <span class="token comment">// which is probably not what we want.</span>
+  <span class="token keyword">let</span> lane<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>
+    <span class="token comment">// TODO: Temporary. We&#39;re removing the concept of discrete updates.</span>
+    <span class="token punctuation">(</span>executionContext <span class="token operator">&amp;</span> DiscreteEventContext<span class="token punctuation">)</span> <span class="token operator">!==</span> NoContext <span class="token operator">&amp;&amp;</span>
+
+    <span class="token comment">// 用户block的类型事件</span>
+    schedulerPriority <span class="token operator">===</span> UserBlockingSchedulerPriority
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 通过findUpdateLane函数重新计算lane</span>
+    lane <span class="token operator">=</span> <span class="token function">findUpdateLane</span><span class="token punctuation">(</span>InputDiscreteLanePriority<span class="token punctuation">,</span> currentEventWipLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 根据优先级计算法则计算lane</span>
+    <span class="token keyword">const</span> schedulerLanePriority <span class="token operator">=</span> <span class="token function">schedulerPriorityToLanePriority</span><span class="token punctuation">(</span>
+      schedulerPriority<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>decoupleUpdatePriorityFromScheduler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// In the new strategy, we will track the current update lane priority</span>
+      <span class="token comment">// inside React and use that priority to select a lane for this update.</span>
+      <span class="token comment">// For now, we&#39;re just logging when they&#39;re different so we can assess.</span>
+      <span class="token keyword">const</span> currentUpdateLanePriority <span class="token operator">=</span> <span class="token function">getCurrentUpdateLanePriority</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>
+        schedulerLanePriority <span class="token operator">!==</span> currentUpdateLanePriority <span class="token operator">&amp;&amp;</span>
+        currentUpdateLanePriority <span class="token operator">!==</span> NoLanePriority
+      <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>__DEV__<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>
+            <span class="token string">&#39;Expected current scheduler lane priority %s to match current update lane priority %s&#39;</span><span class="token punctuation">,</span>
+            schedulerLanePriority<span class="token punctuation">,</span>
+            currentUpdateLanePriority<span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 根据计算得到的 schedulerLanePriority，计算更新的优先级 lane</span>
+    lane <span class="token operator">=</span> <span class="token function">findUpdateLane</span><span class="token punctuation">(</span>schedulerLanePriority<span class="token punctuation">,</span> currentEventWipLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> lane<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>相关参考视频讲解：<a href="https://link.juejin.cn/?target=https%3A%2F%2Fxiaochen1024.com%2Fseries%2F60b1b600712e370039088e24%2F60b1b636712e370039088e25" title="https://xiaochen1024.com/series/60b1b600712e370039088e24/60b1b636712e370039088e25" target="_blank" rel="noopener noreferrer">进入学习<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><ul><li>通过<code>getCurrentPriorityLevel</code>获得所有执行任务的调度优先级<code>schedulerPriority</code>。</li><li>通过<code>findUpdateLane</code>计算<code>lane</code>，作为更新中的优先级。</li></ul><h3 id="findupdatelane" tabindex="-1"><a class="header-anchor" href="#findupdatelane" aria-hidden="true">#</a> findUpdateLane</h3><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">findUpdateLane</span><span class="token punctuation">(</span>
+  <span class="token parameter"><span class="token literal-property property">lanePriority</span><span class="token operator">:</span> LanePriority<span class="token punctuation">,</span>  <span class="token literal-property property">wipLanes</span><span class="token operator">:</span> Lanes<span class="token punctuation">,</span></span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Lane <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>lanePriority<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">NoLanePriority</span><span class="token operator">:</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">SyncLanePriority</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> SyncLane<span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">SyncBatchedLanePriority</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> SyncBatchedLane<span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">InputDiscreteLanePriority</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> lane <span class="token operator">=</span> <span class="token function">pickArbitraryLane</span><span class="token punctuation">(</span>InputDiscreteLanes <span class="token operator">&amp;</span> <span class="token operator">~</span>wipLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>lane <span class="token operator">===</span> NoLane<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Shift to the next priority level</span>
+        <span class="token keyword">return</span> <span class="token function">findUpdateLane</span><span class="token punctuation">(</span>InputContinuousLanePriority<span class="token punctuation">,</span> wipLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> lane<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">InputContinuousLanePriority</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> lane <span class="token operator">=</span> <span class="token function">pickArbitraryLane</span><span class="token punctuation">(</span>InputContinuousLanes <span class="token operator">&amp;</span> <span class="token operator">~</span>wipLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>lane <span class="token operator">===</span> NoLane<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Shift to the next priority level</span>
+        <span class="token keyword">return</span> <span class="token function">findUpdateLane</span><span class="token punctuation">(</span>DefaultLanePriority<span class="token punctuation">,</span> wipLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> lane<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">DefaultLanePriority</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> lane <span class="token operator">=</span> <span class="token function">pickArbitraryLane</span><span class="token punctuation">(</span>DefaultLanes <span class="token operator">&amp;</span> <span class="token operator">~</span>wipLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>lane <span class="token operator">===</span> NoLane<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// If all the default lanes are already being worked on, look for a</span>
+        <span class="token comment">// lane in the transition range.</span>
+        lane <span class="token operator">=</span> <span class="token function">pickArbitraryLane</span><span class="token punctuation">(</span>TransitionLanes <span class="token operator">&amp;</span> <span class="token operator">~</span>wipLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>lane <span class="token operator">===</span> NoLane<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// All the transition lanes are taken, too. This should be very</span>
+          <span class="token comment">// rare, but as a last resort, pick a default lane. This will have</span>
+          <span class="token comment">// the effect of interrupting the current work-in-progress render.</span>
+          lane <span class="token operator">=</span> <span class="token function">pickArbitraryLane</span><span class="token punctuation">(</span>DefaultLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> lane<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">TransitionPriority</span><span class="token operator">:</span> <span class="token comment">// Should be handled by findTransitionLane instead</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">RetryLanePriority</span><span class="token operator">:</span> <span class="token comment">// Should be handled by findRetryLane instead</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token literal-property property">IdleLanePriority</span><span class="token operator">:</span>
+      <span class="token keyword">let</span> lane <span class="token operator">=</span> <span class="token function">pickArbitraryLane</span><span class="token punctuation">(</span>IdleLanes <span class="token operator">&amp;</span> <span class="token operator">~</span>wipLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>lane <span class="token operator">===</span> NoLane<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        lane <span class="token operator">=</span> <span class="token function">pickArbitraryLane</span><span class="token punctuation">(</span>IdleLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> lane<span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+      <span class="token comment">// The remaining priorities are not valid for updates</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">invariant</span><span class="token punctuation">(</span>
+    <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string">&#39;Invalid update priority: %s. This is a bug in React.&#39;</span><span class="token punctuation">,</span>
+    lanePriority<span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="lanepriority-lanepriority" tabindex="-1"><a class="header-anchor" href="#lanepriority-lanepriority" aria-hidden="true">#</a> lanePriority: LanePriority</h3><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">export</span> opaque type LanePriority <span class="token operator">=</span>
+  <span class="token operator">|</span> <span class="token number">0</span>
+  <span class="token operator">|</span> <span class="token number">1</span>
+  <span class="token operator">|</span> <span class="token number">2</span>
+  <span class="token operator">|</span> <span class="token number">3</span>
+  <span class="token operator">|</span> <span class="token number">4</span>
+  <span class="token operator">|</span> <span class="token number">5</span>
+  <span class="token operator">|</span> <span class="token number">6</span>
+  <span class="token operator">|</span> <span class="token number">7</span>
+  <span class="token operator">|</span> <span class="token number">8</span>
+  <span class="token operator">|</span> <span class="token number">9</span>
+  <span class="token operator">|</span> <span class="token number">10</span>
+  <span class="token operator">|</span> <span class="token number">11</span>
+  <span class="token operator">|</span> <span class="token number">12</span>
+  <span class="token operator">|</span> <span class="token number">13</span>
+  <span class="token operator">|</span> <span class="token number">14</span>
+  <span class="token operator">|</span> <span class="token number">15</span>
+  <span class="token operator">|</span> <span class="token number">16</span>
+  <span class="token operator">|</span> <span class="token number">17</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> opaque type Lanes <span class="token operator">=</span> number<span class="token punctuation">;</span>
+<span class="token keyword">export</span> opaque type Lane <span class="token operator">=</span> number<span class="token punctuation">;</span>
+<span class="token keyword">export</span> opaque type LaneMap<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token operator">=</span> Array<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span>
+  ImmediatePriority <span class="token keyword">as</span> ImmediateSchedulerPriority<span class="token punctuation">,</span>
+  UserBlockingPriority <span class="token keyword">as</span> UserBlockingSchedulerPriority<span class="token punctuation">,</span>
+  NormalPriority <span class="token keyword">as</span> NormalSchedulerPriority<span class="token punctuation">,</span>
+  LowPriority <span class="token keyword">as</span> LowSchedulerPriority<span class="token punctuation">,</span>
+  IdlePriority <span class="token keyword">as</span> IdleSchedulerPriority<span class="token punctuation">,</span>
+  NoPriority <span class="token keyword">as</span> NoSchedulerPriority<span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;./SchedulerWithReactIntegration.new&#39;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 同步任务</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token literal-property property">SyncLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">15</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token literal-property property">SyncBatchedLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">14</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 用户事件</span>
+<span class="token keyword">const</span> <span class="token literal-property property">InputDiscreteHydrationLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">13</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token literal-property property">InputDiscreteLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token literal-property property">InputContinuousHydrationLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token literal-property property">InputContinuousLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token literal-property property">DefaultHydrationLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token literal-property property">DefaultLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token literal-property property">TransitionHydrationPriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token literal-property property">TransitionPriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token literal-property property">RetryLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token literal-property property">SelectiveHydrationLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token literal-property property">IdleHydrationLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token literal-property property">IdleLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token literal-property property">OffscreenLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token literal-property property">NoLanePriority</span><span class="token operator">:</span> LanePriority <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="createupdate" tabindex="-1"><a class="header-anchor" href="#createupdate" aria-hidden="true">#</a> createUpdate</h3><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">createUpdate</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">eventTime</span><span class="token operator">:</span> number<span class="token punctuation">,</span> <span class="token literal-property property">lane</span><span class="token operator">:</span> Lane</span><span class="token punctuation">)</span><span class="token operator">:</span> Update<span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token literal-property property">update</span><span class="token operator">:</span> Update<span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    eventTime<span class="token punctuation">,</span> <span class="token comment">// 更新时间</span>
+    lane<span class="token punctuation">,</span> <span class="token comment">// 优先级</span>
+
+    <span class="token literal-property property">tag</span><span class="token operator">:</span> UpdateState<span class="token punctuation">,</span><span class="token comment">//更新</span>
+    <span class="token literal-property property">payload</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span><span class="token comment">// 需要更新的内容</span>
+    <span class="token literal-property property">callback</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">// 更新完后的回调</span>
+
+    <span class="token literal-property property">next</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">// 指向下一个更新</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> update<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>createUpdate</code>函数入参为<code>eventTime</code>和<code>lane</code>，输出一个<code>update</code>对象，而对象中的<code>tag</code>表示此对象要进行什么样的操作。</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">const</span> UpdateState <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">// 更新</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> ReplaceState <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//替换</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> ForceUpdate <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span><span class="token comment">//强制更新</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> CaptureUpdate <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token comment">//xx更新</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li><code>createUpdate</code>就是单纯的给每一个任务进行包装，作为一个个体推入到更新队列中。</li></ul><h3 id="enqueueupdate" tabindex="-1"><a class="header-anchor" href="#enqueueupdate" aria-hidden="true">#</a> enqueueUpdate</h3><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">function</span> enqueueUpdate<span class="token operator">&lt;</span>State<span class="token operator">&gt;</span><span class="token punctuation">(</span>fiber<span class="token operator">:</span> Fiber<span class="token punctuation">,</span> <span class="token literal-property property">update</span><span class="token operator">:</span> Update<span class="token operator">&lt;</span>State<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 获取当前更新队列？为啥呢？因为无法保证react是不是还有正在更新或者没有更新完毕的任务</span>
+  <span class="token keyword">const</span> updateQueue <span class="token operator">=</span> fiber<span class="token punctuation">.</span>updateQueue<span class="token punctuation">;</span>
+  <span class="token comment">//  如果更新队列为空，则表示fiber还未渲染，直接退出</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>updateQueue <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Only occurs if the fiber has been unmounted.</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> <span class="token literal-property property">sharedQueue</span><span class="token operator">:</span> SharedQueue<span class="token operator">&lt;</span>State<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span>updateQueue<span class="token operator">:</span> any<span class="token punctuation">)</span><span class="token punctuation">.</span>shared<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> pending <span class="token operator">=</span> sharedQueue<span class="token punctuation">.</span>pending<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>pending <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// This is the first update. Create a circular list.</span>
+     <span class="token comment">// 还记得那个更新对象吗？update.next =&gt;</span>
+     <span class="token comment">// 如果pedding位null，表示第一次渲染，那么他的指针为update本身</span>
+    update<span class="token punctuation">.</span>next <span class="token operator">=</span> update<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 将update插入到更新队列循环当中</span>
+    update<span class="token punctuation">.</span>next <span class="token operator">=</span> pending<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    pending<span class="token punctuation">.</span>next <span class="token operator">=</span> update<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  sharedQueue<span class="token punctuation">.</span>pending <span class="token operator">=</span> update<span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>__DEV__<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>
+      currentlyProcessingQueue <span class="token operator">===</span> sharedQueue <span class="token operator">&amp;&amp;</span>
+      <span class="token operator">!</span>didWarnUpdateInsideUpdate
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>
+        <span class="token string">&#39;An update (setState, replaceState, or forceUpdate) was scheduled &#39;</span> <span class="token operator">+</span>
+          <span class="token string">&#39;from inside an update function. Update functions should be pure, &#39;</span> <span class="token operator">+</span>
+          <span class="token string">&#39;with zero side-effects. Consider using componentDidUpdate or a &#39;</span> <span class="token operator">+</span>
+          <span class="token string">&#39;callback.&#39;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      didWarnUpdateInsideUpdate <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>这一步就是把需要更新的对象，与<code>fiber</code>更新队列关联起来。</li></ul><h3 id="总结" tabindex="-1"><a class="header-anchor" href="#总结" aria-hidden="true">#</a> 总结</h3><p><code>React</code>通过获取事件的优先级，处理具有同样优先级的事件，创建更新对象并与<code>fiber</code>的更新队列关联起来。到这一步<code>updateContainer</code>这个流程就走完了，也下面就是开始他的<code>协调阶段</code>了。</p><h3 id="协调与调度-1" tabindex="-1"><a class="header-anchor" href="#协调与调度-1" aria-hidden="true">#</a> 协调与调度</h3><p><code>协调</code>与<code>调度</code>的流程大致如图所示：</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ae0a0b584f144d2ea2665998d520088b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="在这里插入图片描述"></p><h3 id="reconciler流程" tabindex="-1"><a class="header-anchor" href="#reconciler流程" aria-hidden="true">#</a> reconciler流程</h3><p><code>React</code>的<code>reconciler</code>流程以<code>scheduleUpdateOnFiber</code>为入口，并在<code>checkForNestedUpdates</code>里面处理任务更新的嵌套层数，如果嵌套层数过大（ <code>&gt;50</code> ），就会认为是无效更新，则会抛出异常。之后便根据<code>markUpdateLaneFromFiberToRoot</code>对当前的<code>fiber</code>树，自底向上的递归<code>fiber</code>的<code>lane</code>，根据<code>lane</code>做二进制比较或者位运算处理。详情如下：</p><ul><li>如果当前执行任务的优先级为同步，则去判断有无正在执行的<code>React</code>任务。如果没有则执行<code>ensureRootIsScheduled</code>，进行调度处理。</li><li>如果当前任务优先级是异步执行，则执行<code>ensureRootIsScheduled</code>进行调度处理。</li></ul><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">scheduleUpdateOnFiber</span><span class="token punctuation">(</span>
+  <span class="token parameter"><span class="token literal-property property">fiber</span><span class="token operator">:</span> Fiber<span class="token punctuation">,</span>  <span class="token literal-property property">lane</span><span class="token operator">:</span> Lane<span class="token punctuation">,</span>  <span class="token literal-property property">eventTime</span><span class="token operator">:</span> number<span class="token punctuation">,</span></span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 检查嵌套层数，避免是循环做无效操作</span>
+  <span class="token function">checkForNestedUpdates</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">warnAboutRenderPhaseUpdatesInDEV</span><span class="token punctuation">(</span>fiber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 更新当前更新队列里面的任务优先级,自底而上更新child.fiberLanes</span>
+  <span class="token keyword">const</span> root <span class="token operator">=</span> <span class="token function">markUpdateLaneFromFiberToRoot</span><span class="token punctuation">(</span>fiber<span class="token punctuation">,</span> lane<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">warnAboutUpdateOnUnmountedFiberInDEV</span><span class="token punctuation">(</span>fiber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Mark that the root has a pending update.</span>
+  <span class="token comment">// 标记root有更新的，执行它</span>
+  <span class="token function">markRootUpdated</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> lane<span class="token punctuation">,</span> eventTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">===</span> workInProgressRoot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Received an update to a tree that&#39;s in the middle of rendering. Mark</span>
+    <span class="token comment">// that there was an interleaved update work on this root. Unless the</span>
+    <span class="token comment">// `deferRenderPhaseUpdateToNextBatch` flag is off and this is a render</span>
+    <span class="token comment">// phase update. In that case, we don&#39;t treat render phase updates as if</span>
+    <span class="token comment">// they were interleaved, for backwards compat reasons.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>
+      deferRenderPhaseUpdateToNextBatch <span class="token operator">||</span>
+      <span class="token punctuation">(</span>executionContext <span class="token operator">&amp;</span> RenderContext<span class="token punctuation">)</span> <span class="token operator">===</span> NoContext
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      workInProgressRootUpdatedLanes <span class="token operator">=</span> <span class="token function">mergeLanes</span><span class="token punctuation">(</span>
+        workInProgressRootUpdatedLanes<span class="token punctuation">,</span>
+        lane<span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>workInProgressRootExitStatus <span class="token operator">===</span> RootSuspendedWithDelay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// The root already suspended with a delay, which means this render</span>
+      <span class="token comment">// definitely won&#39;t finish. Since we have a new update, let&#39;s mark it as</span>
+      <span class="token comment">// suspended now, right before marking the incoming update. This has the</span>
+      <span class="token comment">// effect of interrupting the current render and switching to the update.</span>
+      <span class="token comment">// TODO: Make sure this doesn&#39;t override pings that happen while we&#39;ve</span>
+      <span class="token comment">// already started rendering.</span>
+      <span class="token function">markRootSuspended</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> workInProgressRootRenderLanes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// TODO: requestUpdateLanePriority also reads the priority. Pass the</span>
+  <span class="token comment">// priority as an argument to that function and this one.</span>
+  <span class="token comment">// 获取当前优先级层次</span>
+  <span class="token keyword">const</span> priorityLevel <span class="token operator">=</span> <span class="token function">getCurrentPriorityLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 同步任务，采用同步更新的方式</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>lane <span class="token operator">===</span> SyncLane<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>
+      <span class="token comment">// Check if we&#39;re inside unbatchedUpdates</span>
+      <span class="token punctuation">(</span>executionContext <span class="token operator">&amp;</span> LegacyUnbatchedContext<span class="token punctuation">)</span> <span class="token operator">!==</span> NoContext <span class="token operator">&amp;&amp;</span>
+      <span class="token comment">// Check if we&#39;re not already rendering</span>
+      <span class="token punctuation">(</span>executionContext <span class="token operator">&amp;</span> <span class="token punctuation">(</span>RenderContext <span class="token operator">|</span> CommitContext<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">===</span> NoContext
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Register pending interactions on the root to avoid losing traced interaction data.</span>
+      <span class="token comment">// 同步而且没有react任务在执行，调用performSyncWorkOnRoot</span>
+      <span class="token function">schedulePendingInteractions</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> lane<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// This is a legacy edge case. The initial mount of a ReactDOM.render-ed</span>
+      <span class="token comment">// root inside of batchedUpdates should be synchronous, but layout updates</span>
+      <span class="token comment">// should be deferred until the end of the batch.</span>
+
+      <span class="token function">performSyncWorkOnRoot</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果有正在执行的react任务，那么执行它ensureRootIsScheduled去复用当前正在执行的任务</span>
+      <span class="token comment">// 跟本次更新一起进行</span>
+      <span class="token function">ensureRootIsScheduled</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> eventTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+
+
+      <span class="token function">schedulePendingInteractions</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> lane<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>executionContext <span class="token operator">===</span> NoContext<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Flush the synchronous work now, unless we&#39;re already working or inside</span>
+        <span class="token comment">// a batch. This is intentionally inside scheduleUpdateOnFiber instead of</span>
+        <span class="token comment">// scheduleCallbackForFiber to preserve the ability to schedule a callback</span>
+        <span class="token comment">// without immediately flushing it. We only do this for user-initiated</span>
+        <span class="token comment">// updates, to preserve historical behavior of legacy mode.</span>
+        <span class="token function">resetRenderTimer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">flushSyncCallbackQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Schedule a discrete update but only if it&#39;s not Sync.</span>
+    <span class="token comment">// 如果此次是异步任务</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>
+      <span class="token punctuation">(</span>executionContext <span class="token operator">&amp;</span> DiscreteEventContext<span class="token punctuation">)</span> <span class="token operator">!==</span> NoContext <span class="token operator">&amp;&amp;</span>
+      <span class="token comment">// Only updates at user-blocking priority or greater are considered</span>
+      <span class="token comment">// discrete, even inside a discrete event.</span>
+      <span class="token punctuation">(</span>priorityLevel <span class="token operator">===</span> UserBlockingSchedulerPriority <span class="token operator">||</span>
+        priorityLevel <span class="token operator">===</span> ImmediateSchedulerPriority<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// This is the result of a discrete event. Track the lowest priority</span>
+      <span class="token comment">// discrete update per root so we can flush them early, if needed.</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>rootsWithPendingDiscreteUpdates <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        rootsWithPendingDiscreteUpdates <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span>root<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        rootsWithPendingDiscreteUpdates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Schedule other updates after in case the callback is sync.</span>
+    <span class="token comment">// 可以中断更新，只要调用ensureRootIsScheduled =&gt; performConcurrentWorkOnRoot</span>
+    <span class="token function">ensureRootIsScheduled</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> eventTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+
+
+    <span class="token function">schedulePendingInteractions</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> lane<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// We use this when assigning a lane for a transition inside</span>
+  <span class="token comment">// `requestUpdateLane`. We assume it&#39;s the same as the root being updated,</span>
+  <span class="token comment">// since in the common case of a single root app it probably is. If it&#39;s not</span>
+  <span class="token comment">// the same root, then it&#39;s not a huge deal, we just might batch more stuff</span>
+  <span class="token comment">// together more than necessary.</span>
+  mostRecentlyUpdatedRoot <span class="token operator">=</span> root<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="同步任务类型执行机制" tabindex="-1"><a class="header-anchor" href="#同步任务类型执行机制" aria-hidden="true">#</a> 同步任务类型执行机制</h4><p>当任务的类型为同步任务，并且当前的<code>js</code>主线程空闲，会通过 <code>performSyncWorkOnRoot(root)</code> 方法开始执行同步任务。</p><p><code>performSyncWorkOnRoot</code> 里面主要做了两件事：</p><ul><li><code>renderRootSync</code> 从根节点开始进行同步渲染任务</li><li><code>commitRoot</code> 执行 <code>commit</code> 流程</li></ul><p>当前<code>js</code>线程中有正在执行的任务时候，就会触发<code>ensureRootIsScheduled</code>函数。 <code>ensureRootIsScheduled</code>里面主要是处理当前加入的更新任务的<code>lane</code>是否有变化：</p><ul><li>如果没有变化则表示跟当前的<code>schedule</code>一起执行。</li><li>如果有则创建新的<code>schedule</code>。</li><li>调用<code>performSyncWorkOnRoot</code>执行同步任务。</li></ul><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">ensureRootIsScheduled</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">root</span><span class="token operator">:</span> FiberRoot<span class="token punctuation">,</span> <span class="token literal-property property">currentTime</span><span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> existingCallbackNode <span class="token operator">=</span> root<span class="token punctuation">.</span>callbackNode<span class="token punctuation">;</span>
+
+  <span class="token comment">// Check if any lanes are being starved by other work. If so, mark them as</span>
+  <span class="token comment">// expired so we know to work on those next.</span>
+  <span class="token function">markStarvedLanesAsExpired</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> currentTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Determine the next lanes to work on, and their priority.</span>
+  <span class="token keyword">const</span> nextLanes <span class="token operator">=</span> <span class="token function">getNextLanes</span><span class="token punctuation">(</span>
+    root<span class="token punctuation">,</span>
+    root <span class="token operator">===</span> workInProgressRoot <span class="token operator">?</span> workInProgressRootRenderLanes <span class="token operator">:</span> NoLanes<span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// This returns the priority level computed during the `getNextLanes` call.</span>
+  <span class="token keyword">const</span> newCallbackPriority <span class="token operator">=</span> <span class="token function">returnNextLanesPriority</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>nextLanes <span class="token operator">===</span> NoLanes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Special case: There&#39;s nothing to work on.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>existingCallbackNode <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">cancelCallback</span><span class="token punctuation">(</span>existingCallbackNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      root<span class="token punctuation">.</span>callbackNode <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+      root<span class="token punctuation">.</span>callbackPriority <span class="token operator">=</span> NoLanePriority<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Check if there&#39;s an existing task. We may be able to reuse it.</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>existingCallbackNode <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> existingCallbackPriority <span class="token operator">=</span> root<span class="token punctuation">.</span>callbackPriority<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>existingCallbackPriority <span class="token operator">===</span> newCallbackPriority<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// The priority hasn&#39;t changed. We can reuse the existing task. Exit.</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// The priority changed. Cancel the existing callback. We&#39;ll schedule a new</span>
+    <span class="token comment">// one below.</span>
+    <span class="token function">cancelCallback</span><span class="token punctuation">(</span>existingCallbackNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Schedule a new callback.</span>
+  <span class="token keyword">let</span> newCallbackNode<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>newCallbackPriority <span class="token operator">===</span> SyncLanePriority<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Special case: Sync React callbacks are scheduled on a special</span>
+    <span class="token comment">// internal queue</span>
+    <span class="token comment">// 同步任务调用performSyncWorkOnRoot</span>
+    newCallbackNode <span class="token operator">=</span> <span class="token function">scheduleSyncCallback</span><span class="token punctuation">(</span>
+      <span class="token function">performSyncWorkOnRoot</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>newCallbackPriority <span class="token operator">===</span> SyncBatchedLanePriority<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    newCallbackNode <span class="token operator">=</span> <span class="token function">scheduleCallback</span><span class="token punctuation">(</span>
+      ImmediateSchedulerPriority<span class="token punctuation">,</span>
+      <span class="token function">performSyncWorkOnRoot</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 异步任务调用 performConcurrentWorkOnRoot</span>
+    <span class="token keyword">const</span> schedulerPriorityLevel <span class="token operator">=</span> <span class="token function">lanePriorityToSchedulerPriority</span><span class="token punctuation">(</span>
+      newCallbackPriority<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    newCallbackNode <span class="token operator">=</span> <span class="token function">scheduleCallback</span><span class="token punctuation">(</span>
+      schedulerPriorityLevel<span class="token punctuation">,</span>
+      <span class="token function">performConcurrentWorkOnRoot</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  root<span class="token punctuation">.</span>callbackPriority <span class="token operator">=</span> newCallbackPriority<span class="token punctuation">;</span>
+  root<span class="token punctuation">.</span>callbackNode <span class="token operator">=</span> newCallbackNode<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>所以任务类型为同步的时候，不管<code>js</code>线程空闲与否，都会走到<code>performSyncWorkOnRoot</code>，进而走<code>renderRootSync</code>、<code>workLoopSync</code>流程，而在<code>workLoopSync</code>中，只要<code>workInProgress fiber</code>不为<code>null</code>，则会一直循环执行<code>performUnitOfWork</code>，而<code>performUnitOfWork</code>中会去执行<code>beginWork</code>和<code>completeWork</code>，也就是上一章里面说的<code>beginWork</code>流程去创建每一个<code>fiber</code>节点</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// packages/react-reconciler/src/ReactFiberWorkLoop.old.js
+
+function workLoopSync() {
+  while (workInProgress !== null) {
+    performUnitOfWork(workInProgress);
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="异步任务类型执行机制" tabindex="-1"><a class="header-anchor" href="#异步任务类型执行机制" aria-hidden="true">#</a> 异步任务类型执行机制</h4><p>异步任务则会去执行<code>performConcurrentWorkOnRoot</code>，进而去执行<code>renderRootConcurrent</code>、<code>workLoopConcurrent</code>，但是与同步任务不同的是异步任务是可以中断的，这个可中断的关键字就在于<code>shouldYield</code>，它本身返回值是一个<code>false</code>，为<code>true</code>则可以中断。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// packages/react-reconciler/src/ReactFiberWorkLoop.old.js
+
+function workLoopConcurrent() {
+  while (workInProgress !== null &amp;&amp; !shouldYield()) {
+    performUnitOfWork(workInProgress);
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>每一次在执行<code>performUnitOfWork</code>之前都会关注一下<code>shouldYield()</code>返回值，也就是说的<code>reconciler</code>过程可中断的意思。</p><h3 id="shouldyield" tabindex="-1"><a class="header-anchor" href="#shouldyield" aria-hidden="true">#</a> shouldYield</h3><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// packages\scheduler\src\SchedulerPostTask.js
+export function unstable_shouldYield() {
+  return getCurrentTime() &gt;= deadline;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>getCurrentTime</code>为<code>new Date()</code>，<code>deadline</code>为浏览器处理每一帧结束<code>时间戳</code>，所以这里表示的是，在浏览器每一帧空闲的时候，才会去处理此任务，如果当前任务在浏览器执行的<code>某一帧</code>里面，则会<code>中断当前任务</code>，等待浏览器当前帧执行完毕，等到<code>下一帧空闲</code>的时候，才会去执行当前任务。</p><p>所以不管在<code>workLoopConcurrent</code>还是<code>workLoopSync</code>中，都会根据当前的<code>workInProgress fiber</code>是否为<code>null</code>来进行循环调用<code>performUnitOfWork</code>。根据流程图以及上面说的这一些，可以看得出来从<code>beginWork</code>到<code>completeUnitOfWork</code>这个过程究竟干了什么。</p><p>这三章将会讲解<code>fiber</code>树的<code>reconcileChildren</code>过程、<code>completeWork</code>过程、<code>commitMutationEffects</code>..<code>insertOrAppendPlacementNodeIntoContainer(DOM)</code>过程。这里将详细解读<code>v17</code>版本的<code>React</code>的<code>diff算法</code>、<code>虚拟dom到真实dom的创建</code>，<code>函数生命钩子</code>的执行流程等。</p><h3 id="performunitofwork" tabindex="-1"><a class="header-anchor" href="#performunitofwork" aria-hidden="true">#</a> performUnitOfWork</h3><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>function performUnitOfWork(unitOfWork: Fiber): void {
+  // The current, flushed, state of this fiber is the alternate. Ideally
+  // nothing should rely on this, but relying on it here means that we don&#39;t
+  // need an additional field on the work in progress.
+  const current = unitOfWork.alternate;
+  setCurrentDebugFiberInDEV(unitOfWork);
+
+  let next;
+  if (enableProfilerTimer &amp;&amp; (unitOfWork.mode &amp; ProfileMode) !== NoMode) {
+    startProfilerTimer(unitOfWork);
+    next = beginWork(current, unitOfWork, subtreeRenderLanes);
+    stopProfilerTimerIfRunningAndRecordDelta(unitOfWork, true);
+  } else {
+    // beginWork
+    next = beginWork(current, unitOfWork, subtreeRenderLanes);
+  }
+
+  resetCurrentDebugFiberInDEV();
+  unitOfWork.memoizedProps = unitOfWork.pendingProps;
+  if (next === null) {
+    // If this doesn&#39;t spawn new work, complete the current work.
+    // completeUnitOfWork
+    completeUnitOfWork(unitOfWork);
+  } else {
+    workInProgress = next;
+  }
+
+  ReactCurrentOwner.current = null;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>所以在<code>performUnitOfWork</code>里面，每一次执行<code>beginWork</code>，进行workIngProgress更新，当遍历完毕整棵fiber树之后便会执行<code>completeUnitOfWork</code>。</p><h3 id="beginwork" tabindex="-1"><a class="header-anchor" href="#beginwork" aria-hidden="true">#</a> beginWork</h3><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/501de29daaa34dcb90bd37edfb931b1b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="在这里插入图片描述"> <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/da61041701c8412d909507a7b2b1a9b9~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="在这里插入图片描述"></p><p>我们可以看到<code>beginWork</code>就是<code>originBeginWork</code>得实际执行。我们翻开<code>beginWork</code>的源码可以看到，它便是根据不同的<code>workInProgress.tag</code>执行不同组件类型的处理函数，这里就不去拆分的太细，只有有想法便会单独出一篇文章讲述这个的细节，但是最后都会去调用<code>reconcileChildren</code>。</p><h3 id="completeunitofwork" tabindex="-1"><a class="header-anchor" href="#completeunitofwork" aria-hidden="true">#</a> completeUnitOfWork</h3><p>当遍历完毕执行<code>beginWork</code>，遍历完毕之后就会走<code>completeUnitOfWork</code>。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>function completeUnitOfWork(unitOfWork: Fiber): void {
+  // Attempt to complete the current unit of work, then move to the next
+  // sibling. If there are no more siblings, return to the parent fiber.
+  let completedWork = unitOfWork;
+  do {
+    // The current, flushed, state of this fiber is the alternate. Ideally
+    // nothing should rely on this, but relying on it here means that we don&#39;t
+    // need an additional field on the work in progress.
+    const current = completedWork.alternate;
+    const returnFiber = completedWork.return;
+
+    // Check if the work completed or if something threw.
+    if ((completedWork.flags &amp; Incomplete) === NoFlags) {
+      setCurrentDebugFiberInDEV(completedWork);
+      let next;
+      if (
+        !enableProfilerTimer ||
+        (completedWork.mode &amp; ProfileMode) === NoMode
+      ) {
+        // 绑定事件，更新props，更新dom
+        next = completeWork(current, completedWork, subtreeRenderLanes);
+      } else {
+        startProfilerTimer(completedWork);
+        next = completeWork(current, completedWork, subtreeRenderLanes);
+        // Update render duration assuming we didn&#39;t error.
+        stopProfilerTimerIfRunningAndRecordDelta(completedWork, false);
+      }
+      resetCurrentDebugFiberInDEV();
+
+      if (next !== null) {
+        // Completing this fiber spawned new work. Work on that next.
+        workInProgress = next;
+        return;
+      }
+
+      resetChildLanes(completedWork);
+
+      if (
+        returnFiber !== null &amp;&amp;
+        // Do not append effects to parents if a sibling failed to complete
+        (returnFiber.flags &amp; Incomplete) === NoFlags
+      ) {
+        // Append all the effects of the subtree and this fiber onto the effect
+        // list of the parent. The completion order of the children affects the
+        // side-effect order.
+
+        // 把已收集到的副作用，合并到父级effect lists中
+        if (returnFiber.firstEffect === null) {
+          returnFiber.firstEffect = completedWork.firstEffect;
+        }
+        if (completedWork.lastEffect !== null) {
+          if (returnFiber.lastEffect !== null) {
+            returnFiber.lastEffect.nextEffect = completedWork.firstEffect;
+          }
+          returnFiber.lastEffect = completedWork.lastEffect;
+        }
+
+        // If this fiber had side-effects, we append it AFTER the children&#39;s
+        // side-effects. We can perform certain side-effects earlier if needed,
+        // by doing multiple passes over the effect list. We don&#39;t want to
+        // schedule our own side-effect on our own list because if end up
+        // reusing children we&#39;ll schedule this effect onto itself since we&#39;re
+        // at the end.
+        const flags = completedWork.flags;
+
+        // Skip both NoWork and PerformedWork tags when creating the effect
+        // list. PerformedWork effect is read by React DevTools but shouldn&#39;t be
+        // committed.
+        // 跳过NoWork，PerformedWork在commit阶段用不到
+
+        if (flags &gt; PerformedWork) {
+          if (returnFiber.lastEffect !== null) {
+            returnFiber.lastEffect.nextEffect = completedWork;
+          } else {
+            returnFiber.firstEffect = completedWork;
+          }
+          returnFiber.lastEffect = completedWork;
+        }
+      }
+    } else {
+      // This fiber did not complete because something threw. Pop values off
+      // the stack without entering the complete phase. If this is a boundary,
+      // capture values if possible.
+      const next = unwindWork(completedWork, subtreeRenderLanes);
+
+      // Because this fiber did not complete, don&#39;t reset its expiration time.
+
+      if (next !== null) {
+        // If completing this work spawned new work, do that next. We&#39;ll come
+        // back here again.
+        // Since we&#39;re restarting, remove anything that is not a host effect
+        // from the effect tag.
+        next.flags &amp;= HostEffectMask;
+        workInProgress = next;
+        return;
+      }
+
+      if (
+        enableProfilerTimer &amp;&amp;
+        (completedWork.mode &amp; ProfileMode) !== NoMode
+      ) {
+        // Record the render duration for the fiber that errored.
+        stopProfilerTimerIfRunningAndRecordDelta(completedWork, false);
+
+        // Include the time spent working on failed children before continuing.
+        let actualDuration = completedWork.actualDuration;
+        let child = completedWork.child;
+        while (child !== null) {
+          actualDuration += child.actualDuration;
+          child = child.sibling;
+        }
+        completedWork.actualDuration = actualDuration;
+      }
+
+      if (returnFiber !== null) {
+        // Mark the parent fiber as incomplete and clear its effect list.
+        returnFiber.firstEffect = returnFiber.lastEffect = null;
+        returnFiber.flags |= Incomplete;
+      }
+    }
+
+    // 兄弟层指针
+    const siblingFiber = completedWork.sibling;
+    if (siblingFiber !== null) {
+      // If there is more work to do in this returnFiber, do that next.
+      workInProgress = siblingFiber;
+      return;
+    }
+    // Otherwise, return to the parent
+    completedWork = returnFiber;
+    // Update the next thing we&#39;re working on in case something throws.
+    workInProgress = completedWork;
+  } while (completedWork !== null);
+
+  // We&#39;ve reached the root.
+  if (workInProgressRootExitStatus === RootIncomplete) {
+    workInProgressRootExitStatus = RootCompleted;
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>他的作用便是逐层收集<code>fiber</code>树上已经被打上的副作用标签<code>flags</code>，一直收集到<code>root</code>上面以便于在<code>commit</code>阶段进行<code>dom</code>的<code>增删改</code>。</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e45d224cfbbe43a7ad878fd4c933079b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="在这里插入图片描述"></p><h3 id="scheduler流程" tabindex="-1"><a class="header-anchor" href="#scheduler流程" aria-hidden="true">#</a> scheduler流程</h3><p>在这里应该有很多人不明白，<code>协调</code>和<code>调度</code>是什么意思，通俗来讲：</p><ul><li>协调就是协同合作</li><li>调度就是执行命令</li></ul><p>所以在<code>React</code>中协调就是一个<code>js</code>线程中，需要安排很多模块去完成整个流程，例如：同步异步<code>lane</code>的处理，<code>reconcileChildren</code>处理<code>fiber</code>节点等，保证整个流程有条不紊的执行。调度表现为让<code>空闲的js线程</code>（帧层面）去执行其他任务，这个过程称之为调度，那么它到底是怎么去做的呢？ 我们回到处理异步任务那里，我们会发现<code>performConcurrentWorkOnRoot</code>这个函数外面包裹了一层<code>scheduleCallback</code>：</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>newCallbackNode = scheduleCallback(
+   schedulerPriorityLevel,
+   performConcurrentWorkOnRoot.bind(null, root),
+)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>export function scheduleCallback(
+  reactPriorityLevel: ReactPriorityLevel,  callback: SchedulerCallback,  options: SchedulerCallbackOptions | void | null,
+) {
+  const priorityLevel = reactPriorityToSchedulerPriority(reactPriorityLevel);
+  return Scheduler_scheduleCallback(priorityLevel, callback, options);
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fd7d19da333146f8a8db382165ecc5fe~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="在这里插入图片描述"></p><p>我们几经周折找到了声明函数的地方</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>// packages/scheduler/src/Scheduler.js
+function unstable_scheduleCallback(priorityLevel, callback, options) {
+  var currentTime = getCurrentTime();
+
+  var startTime;
+  if (typeof options === &#39;object&#39; &amp;&amp; options !== null) {
+    var delay = options.delay;
+    if (typeof delay === &#39;number&#39; &amp;&amp; delay &gt; 0) {
+      startTime = currentTime + delay;
+    } else {
+      startTime = currentTime;
+    }
+  } else {
+    startTime = currentTime;
+  }
+
+  var timeout;
+  switch (priorityLevel) {
+    case ImmediatePriority:
+      timeout = IMMEDIATE_PRIORITY_TIMEOUT;
+      break;
+    case UserBlockingPriority:
+      timeout = USER_BLOCKING_PRIORITY_TIMEOUT;
+      break;
+    case IdlePriority:
+      timeout = IDLE_PRIORITY_TIMEOUT;
+      break;
+    case LowPriority:
+      timeout = LOW_PRIORITY_TIMEOUT;
+      break;
+    case NormalPriority:
+    default:
+      timeout = NORMAL_PRIORITY_TIMEOUT;
+      break;
+  }
+
+  var expirationTime = startTime + timeout;
+
+  var newTask = {
+    id: taskIdCounter++,
+    callback,
+    priorityLevel,
+    startTime,
+    expirationTime,
+    sortIndex: -1,
+  };
+  if (enableProfiling) {
+    newTask.isQueued = false;
+  }
+
+  if (startTime &gt; currentTime) {
+    // This is a delayed task.
+    newTask.sortIndex = startTime;
+    push(timerQueue, newTask);
+    if (peek(taskQueue) === null &amp;&amp; newTask === peek(timerQueue)) {
+      // All tasks are delayed, and this is the task with the earliest delay.
+      if (isHostTimeoutScheduled) {
+        // Cancel an existing timeout.
+        cancelHostTimeout();
+      } else {
+        isHostTimeoutScheduled = true;
+      }
+      // Schedule a timeout.
+      requestHostTimeout(handleTimeout, startTime - currentTime);
+    }
+  } else {
+    newTask.sortIndex = expirationTime;
+    push(taskQueue, newTask);
+    if (enableProfiling) {
+      markTaskStart(newTask, currentTime);
+      newTask.isQueued = true;
+    }
+    // Schedule a host callback, if needed. If we&#39;re already performing work,
+    // wait until the next time we yield.
+    if (!isHostCallbackScheduled &amp;&amp; !isPerformingWork) {
+      isHostCallbackScheduled = true;
+      requestHostCallback(flushWork);
+    }
+  }
+
+  return newTask;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>当<code>starttime &gt; currentTime</code>的时候，表示任务超时，插入超时队列。</li><li>任务没有超时，插入调度队列</li><li>执行<code>requestHostCallback</code>调度任务。</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>  // 创建消息通道
+  const channel = new MessageChannel();
+  const port = channel.port2;
+  channel.port1.onmessage = performWorkUntilDeadline;
+
+  // 告知scheduler开始调度
+  requestHostCallback = function(callback) {
+    scheduledHostCallback = callback;
+    if (!isMessageLoopRunning) {
+      isMessageLoopRunning = true;
+      port.postMessage(null);
+    }
+  };
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>react</code>通过 <code>new MessageChannel()</code> 创建了消息通道，当发现<code>js</code>线程空闲时，通过<code>postMessage</code>通知 <code>scheduler</code>开始调度。<code>performWorkUntilDeadline</code>函数功能为处理<code>react</code>调度开始时间更新到结束时间。 这里我们要关注一下设备帧速率。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>  forceFrameRate = function(fps) {
+    if (fps &lt; 0 || fps &gt; 125) {
+      // Using console[&#39;error&#39;] to evade Babel and ESLint
+      console[&#39;error&#39;](
+        &#39;forceFrameRate takes a positive int between 0 and 125, &#39; +
+          &#39;forcing frame rates higher than 125 fps is not supported&#39;,
+      );
+      return;
+    }
+    if (fps &gt; 0) {
+      yieldInterval = Math.floor(1000 / fps);
+    } else {
+      // reset the framerate
+      yieldInterval = 5;
+    }
+  };
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="performworkuntildeadline" tabindex="-1"><a class="header-anchor" href="#performworkuntildeadline" aria-hidden="true">#</a> performWorkUntilDeadline</h3><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>  const performWorkUntilDeadline = () =&gt; {
+    if (scheduledHostCallback !== null) {
+      const currentTime = getCurrentTime();
+      // Yield after `yieldInterval` ms, regardless of where we are in the vsync
+      // cycle. This means there&#39;s always time remaining at the beginning of
+      // the message event.
+      // 更新当前帧结束时间
+      deadline = currentTime + yieldInterval;
+      const hasTimeRemaining = true;
+      try {
+        const hasMoreWork = scheduledHostCallback(
+          hasTimeRemaining,
+          currentTime,
+        );
+        // 还有任务就继续执行
+        if (!hasMoreWork) {
+          isMessageLoopRunning = false;
+          scheduledHostCallback = null;
+        } else {
+          // If there&#39;s more work, schedule the next message event at the end
+          // of the preceding one.
+          // 没有就postMessage
+          port.postMessage(null);
+        }
+      } catch (error) {
+        // If a scheduler task throws, exit the current browser task so the
+        // error can be observed.
+        port.postMessage(null);
+        throw error;
+      }
+    } else {
+      isMessageLoopRunning = false;
+    }
+    // Yielding to the browser will give it a chance to paint, so we can
+    // reset this.
+    needsPaint = false;
+  };
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/001ccf21e9194d77aebfa0f4b35ceb72~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="在这里插入图片描述"></p><h3 id="总结-1" tabindex="-1"><a class="header-anchor" href="#总结-1" aria-hidden="true">#</a> 总结</h3><p>本文讲了<code>React</code>在状态改变的时候，会根据当前任务优先级，等一些列操作去创建<code>workInProgress fiber</code>链表树，在协调阶段，会根据浏览器每一帧去做比较，假如浏览器<code>每一帧</code>执行时间戳高于当前时间，则表示当前帧没有空闲时间，当前任务则必须要等到<code>下一个空闲帧</code>才能去执行的<code>可中断</code>的策略。还有关于<code>beginWork</code>的遍历执行更新<code>fiber</code>的节点。那么到这里这一章就讲述完毕了，下一章讲一讲React的diff算法</p></div><!--[--><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: alan.xiao@d1m.cn">alan.xiao</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/vue-press/source/react/event-mechanism/" class="" aria-label="事件机制"><!--[--><!--]--> 事件机制 <!--[--><!--]--></a></span><span class="next"><a href="/vue-press/source/react/hooks/" class="" aria-label="Hooks原理"><!--[--><!--]--> Hooks原理 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/vue-press/assets/app.7f0f8002.js" defer></script>
+  </body>
+</html>

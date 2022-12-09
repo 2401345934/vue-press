@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-228e0b01","path":"/tool/intro/","title":"intro 页面引导","lang":"zh-CN","frontmatter":{"createTime":"2022/10/26","tag":"工具"},"excerpt":"","headers":[],"git":{"updatedTime":1668147206000,"contributors":[{"name":"alan.xiao","email":"alan.xiao@d1m.cn","commits":1}]},"filePathRelative":"tool/intro/index.md"}');export{t as data};

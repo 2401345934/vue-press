@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-9a2d5ed6","path":"/tool/loading-html/","title":"好看的loading 网站","lang":"zh-CN","frontmatter":{"createTime":"2022/10/26","tag":"工具"},"excerpt":"","headers":[],"git":{"updatedTime":1668147206000,"contributors":[{"name":"alan.xiao","email":"alan.xiao@d1m.cn","commits":1}]},"filePathRelative":"tool/loading-html/index.md"}');export{a as data};
